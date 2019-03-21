@@ -15,4 +15,12 @@ class IndexController extends Controller
     {
         return view('home.index.index');
     }
+
+    /**
+     *
+     */
+    public function login()
+    {
+        return view('home.index.login');
+    }
 }
