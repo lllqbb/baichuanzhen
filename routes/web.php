@@ -17,12 +17,17 @@
 //    首页
 
 Route::group (['namespace' => 'Home'], function () {
-Route::get('/', 'IndexController@index');
+
+    Route::get('/', 'IndexController@index');
+
 });
 
 //Home模块
 Route::group (['prefix' => 'home' , 'namespace' => 'Home'], function () {
 
-   Route::get('login', 'IndexController@login');
+    //登录
+    Route::get('login', 'IndexController@login');
+    Route::post('login', 'IndexController@dologin');
+
 });
 

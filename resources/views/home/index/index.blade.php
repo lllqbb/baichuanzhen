@@ -1,4 +1,4 @@
-@extends('master')
+@extends('layouts.master')
 
 @section('title','白传镇的个人博客')
 

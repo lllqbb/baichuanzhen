@@ -1,4 +1,4 @@
-@extends('master')
+@extends('layouts.master')
 
 @section('title','登录')
 
@@ -7,18 +7,19 @@
 @endsection
 
 @section('content')
-    <form class="form-signin">
-        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+    <form class="form-signin" method="post" action="{{ url('home/login') }}">
+       {{ csrf_field() }}
+        <h1 class="h3 mb-3 font-weight-normal">请登录</h1>
+        <label for="inputEmail" class="sr-only">用户名</label>
+        <input type="text" id="inputEmail" class="form-control" placeholder="请输入手机号或邮箱" required="" autofocus="" name="username">
+        <label for="inputPassword" class="sr-only">密码</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="请输入密码" required="" name="password">
         <div class="checkbox mb-3">
             <label>
-                <input type="checkbox" value="remember-me"> Remember me
+                <input type="checkbox" value="remember-me"> 记住我
             </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
         <p class="mt-5 mb-3 text-muted">© 2018-2019</p>
     </form>
 @endsection

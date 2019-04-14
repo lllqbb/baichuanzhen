@@ -23,4 +23,16 @@ class IndexController extends Controller
     {
         return view('home.index.login');
     }
+
+
+    /**
+     *处理登录
+     */
+    public function dologin()
+    {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+//        dd([$username,$password]);
+        echo '1234';
+    }
 }
