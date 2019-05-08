@@ -20,6 +20,32 @@
             </label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+
+        <div style="width: 600px;">
+            <div style="background: #ddd;
+        margin-top: 4px;
+        display: inline-block;
+        width: 105px;
+        height: 1px;
+        _overflow: hidden;
+        vertical-align: middle;">
+            </div>
+            <span style="display: inline-block;
+        width: 85px;
+        vertical-align: middle;">更多登录方式</span>
+            <div style="background: #ddd;
+        margin-top: 4px;
+        display: inline-block;
+        width: 105px;
+        height: 1px;
+        _overflow: hidden;
+        vertical-align: middle;">
+            </div>
+        </div>
+        <a href="">
+            <img src="{{ asset('images/bt_blue_24X24.png') }}" alt="QQ登录">
+        </a>
+
         <p class="mt-5 mb-3 text-muted">© 2018-2019</p>
     </form>
 @endsection

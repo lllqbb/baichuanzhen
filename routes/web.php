@@ -31,3 +31,11 @@ Route::group (['prefix' => 'home' , 'namespace' => 'Home'], function () {
 
 });
 
+
+//开发博客
+//Route::get('/', function () {
+//    return redirect('/blog');
+//});
+
+Route::get('/blog', 'BlogController@index')->name('blog.home');
+Route::get('/blog/{slug}', 'BlogController@showPost')->name('blog.detail');
