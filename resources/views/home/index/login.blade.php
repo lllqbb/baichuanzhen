@@ -30,16 +30,8 @@
         _overflow: hidden;
         vertical-align: middle;">
             </div>
-            <span style="display: inline-block;
-        width: 85px;
-        vertical-align: middle;">更多登录方式</span>
-            <div style="background: #ddd;
-        margin-top: 4px;
-        display: inline-block;
-        width: 105px;
-        height: 1px;
-        _overflow: hidden;
-        vertical-align: middle;">
+            <span style="display: inline-block;width: 85px;vertical-align: middle;">更多登录方式</span>
+            <div style="background: #ddd;margin-top: 4px;display: inline-block;width: 105px;height: 1px;_overflow: hidden;vertical-align: middle;">
             </div>
         </div>
         <a href="">

@@ -4,15 +4,15 @@
 
 @section('content')
     <div class="row">
-        {{--左侧列表--}}
+        <!-- 左侧列表 -->
         <div class="col-xs-12 col-md-12 col-lg-8">
-            {{--文章列表--}}
+            <!-- 文章列表 -->
 
             @foreach ($posts as $post)
                 <div class="panel panel-success">
                     <div class="panel-heading">
                         <h3 class="panel-title">
-                            <a href="{{ route('blog.detail', ['slug' => $post->slug]) }}">{{ $post->title }}</a>
+                            <a href="{{ route('home.detail', ['slug' => $post->slug]) }}">{{ $post->title }}</a>
                             <em>({{ $post->published_at }})</em>
                         </h3>
                     </div>
@@ -24,9 +24,9 @@
 
                         </div>
                         <div>
-                            {{ str_limit($post->content) }}
+                            {{ str_limit($post->content) }}  <!-- 默认显示100字符 -->
                             <br>
-                            <a href="{{ route('blog.detail', ['slug' => $post->slug]) }}">
+                            <a href="{{ route('home.detail', ['slug' => $post->slug]) }}">
                                 <span style="float: right;background: #34afd8;color: #fff;border-radius: 10px;width: 80px;text-align: center;">阅读全文</span>
                             </a>
 
@@ -35,8 +35,9 @@
                     </div>
                 </div>
             @endforeach
+            <!-- 分页 -->
             <div style="text-align: center;">
-                {{ $posts->render() }}
+                {!! $posts->render() !!}
             </div>
 
         </div>
@@ -49,15 +50,6 @@
                     <input class="btn btn-primary" type="submit" value="全站搜索">
                 </form>
             </div>
-            {{--<br>--}}
-            {{--<div class="" style="text-align: center;">--}}
-                {{--<form class="form-inline" role="form" action="" method="post">--}}
-                    {{--<input type="hidden" name="_token" value="wzF2ExXLmot8PA7uPaQFajONnsPh2KLdnwXU8ov6">--}}
-                    {{--<input class="form-control" type="text" name="" placeholder="搜索" style="width: 250px;">--}}
-                    {{--<input class="btn btn-primary" type="submit" value="全站搜索">--}}
-                {{--</form>--}}
-            {{--</div>--}}
-
         </div>
     </div>
 

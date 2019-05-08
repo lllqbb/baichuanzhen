@@ -28,6 +28,7 @@ Route::group (['prefix' => 'home' , 'namespace' => 'Home'], function () {
     //登录
     Route::get('login', 'IndexController@login');
     Route::post('login', 'IndexController@dologin');
+    Route::get('{slug}', 'IndexController@showPost')->name('home.detail');
 
 });
 

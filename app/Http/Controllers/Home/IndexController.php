@@ -25,7 +25,7 @@ class IndexController extends Controller
     public function showPost($slug)
     {
         $post = Post::where('slug', $slug)->firstOrFail();
-        return view('blog.post', ['post' => $post]);
+        return view('home.index.article', ['post' => $post]);
     }
 
     /**
