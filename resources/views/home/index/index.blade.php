@@ -27,7 +27,7 @@
                             {{ str_limit($post->content) }}  <!-- 默认显示100字符 -->
                             <br>
                             <a href="{{ route('home.detail', ['slug' => $post->slug]) }}">
-                                <span style="float: right;background: #34afd8;color: #fff;border-radius: 10px;width: 80px;text-align: center;">阅读全文</span>
+                                <span class="read">阅读全文</span>
                             </a>
 
                         </div>

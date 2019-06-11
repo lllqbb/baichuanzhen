@@ -25,7 +25,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">BCZ</a>
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    <img src="{{ asset('images/bai.png') }}" alt="" width="24">
+                </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->

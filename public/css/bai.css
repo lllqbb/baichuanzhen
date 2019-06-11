@@ -12,3 +12,12 @@ li{
 a:hover {
     text-decoration: none;
 }
+/*阅读全文*/
+.read{
+    float: right;
+    background: #34afd8;
+    color: #fff;
+    border-radius: 10px;
+    padding: 0 10px;
+    text-align: center;
+}

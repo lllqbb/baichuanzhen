@@ -1,13 +1,21 @@
 @extends('layouts.master')
 
-@section('title','白传镇的个人博客')
+@section('title',$post->title."-白传镇的个人博客")
 
 @section('content')
     <div class="row">
         <!-- 左侧列表 -->
+        <!-- 详情 -->
         <div class="col-xs-12 col-md-12 col-lg-8">
-            <!-- 详情 -->
-
+                    <!-- 详情 -->
+                    <h1>{{ $post->title }}</h1>
+                    <h5>{{ $post->published_at }}</h5>
+                    <div>
+                        {{ $post->content }}
+                    </div>
+            <button class="btn btn-primary" onclick="history.go(-1)">
+                << Back
+            </button>
 
         </div>
 
