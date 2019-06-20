@@ -1,4 +1,4 @@
-@extends('admin.layout)
+@extends('admin.layout')
 
 @section('content')
     <div class="container">
@@ -20,7 +20,7 @@
 
                         @include('admin.partials.errors')
 
-                        <form role="form" method="POST" action="/admin/tag">
+                        <form role="form" method="POST" action="/admin/tag/store">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                             <div class="form-group row">
@@ -50,4 +50,4 @@
         </div>
     </div>
 
-@stop
+@endsection

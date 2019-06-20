@@ -9,7 +9,7 @@
                 </h3>
             </div>
             <div class="col-md-6 text-right">
-                <a href="/admin/tag/create" class="btn btn-success btn-md">
+                <a href="{{ asset('admin/tag/create') }}" class="btn btn-success btn-md">
                     <i class="fa fa-plus-circle"></i> 新增标签
                 </a>
             </div>
@@ -62,7 +62,7 @@
             </div>
         </div>
     </div>
-@stop
+@endsection
 
 @section('scripts')
     <script>
@@ -70,4 +70,4 @@
             $("#tags-table").DataTable({});
         });
     </script>
-@stop
+@endsection
