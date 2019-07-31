@@ -18,13 +18,26 @@
 Route::get('/admin', function () {
     return redirect('/admin/post');
 });
-Route::middleware('auth')->namespace('Admin')->group(function () {
-    Route::resource('admin/post', 'PostController');
-    Route::resource('admin/tag', 'TagController');
-    Route::get('admin/tag/create', 'TagController@create');
-    Route::post('admin/tag/store', 'TagController@store');
-    Route::get('admin/upload', 'UploadController@index');
+/**
+ * 管理后台
+ */
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth'], function () {
+    Route::resource('post', 'PostController');
+    Route::resource('tag', 'TagController', ['except' => 'show']);
+    Route::get('tag/create', 'TagController@create');
+    Route::post('tag/store', 'TagController@store');  //提交表单
+    Route::get('tag/edit', 'TagController@edit');   //显示编辑标签
+    Route::get('tag.destory', 'TagController@destory');   //删除
+    Route::post('tag/update', 'TagController@update');  //
+
+//    upload相关路由
+    Route::get('upload', 'UploadController@index');
+    Route::post('upload/file', 'UploadController@uploadFile');
+    Route::delete('upload/file', 'UploadController@deleteFile');
+    Route::post('upload/folder', 'UploadController@createFolder');
+    Route::delete('upload/folder', 'UploadController@deleteFolder');
 });
+
 
 // 登录退出
 Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
