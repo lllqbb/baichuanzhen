@@ -24,13 +24,13 @@ a:hover {
 
 /*导航颜色*/
 #nav-color {
-    color: #fff;
+    color: rgba(238, 238, 238, 0.9);
 }
 
 
 /*导航链接颜色*/
 #bs-example-navbar-collapse-8 > ul > li > a:hover{
-    color: #000;
+    color: #fff;
     background-color: transparent;
 }
 

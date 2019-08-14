@@ -49,6 +49,7 @@
                 <li><a href="#" id="nav-color">ThinkPHP</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <li><a href="{{ asset('/contact') }}" id="nav-color">联系我们</a></li>
                 <li><a href="{{ asset('home/login') }}" id="nav-color">登录</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->

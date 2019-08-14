@@ -62,7 +62,17 @@ Route::group (['prefix' => 'home' , 'namespace' => 'Home'], function () {
     Route::post('login', 'IndexController@dologin');
     Route::get('{slug}', 'IndexController@showPost')->name('home.detail');
 
+    /**联系我们**/
+//    Route::get('contact', 'ContactController@showForm');
+//    Route::get('contact', function (){
+//        return '23';
+//    });
+
 });
+/**联系我们**/
+Route::get('/contact', 'Home\ContactController@showForm');
+Route::post('/contact', 'Home\ContactController@sendContactInfo');
+
 
 
 //开发博客
