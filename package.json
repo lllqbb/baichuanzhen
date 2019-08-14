@@ -18,6 +18,9 @@
         "jquery": "^3.2",
         "laravel-mix": "^1.0",
         "lodash": "^4.17.4",
+        "pickadate": "^5.0.0-alpha.3",
+        "selectize": "^0.12.6",
+        "startbootstrap-clean-blog": "^5.0.7",
         "vue": "^2.5.7"
     },
     "dependencies": {

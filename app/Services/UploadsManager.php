@@ -39,7 +39,7 @@ class UploadsManager
         $breadcrumbs = array_slice($breadcrumbs, 0, -1);
 
         $subfolders = [];
-        foreach ( array_unique($this->disk-directories($folder)) as $subfolder) {
+        foreach (array_unique($this->disk->directories($folder)) as $subfolder) {
             $subfolders["/$subfolder"] = basename($subfolder);
         }
 
@@ -68,7 +68,7 @@ class UploadsManager
     /**
      * 返回当前目录路径
      */
-    protected  function breadcrumbs($folder)
+    protected function breadcrumbs($folder)
     {
         $folder = trim($folder, '/');
         $crumbs = ['/' => 'root'];
@@ -103,7 +103,6 @@ class UploadsManager
             'modified' => $this->fileModified($path),
         ];
     }
-
 
     /**
      * 返回文件完整的web路径
@@ -140,5 +139,65 @@ class UploadsManager
         return Carbon::createFromTimestamp(
             $this->disk->lastModified($path)
         );
+    }
+
+    /**
+     * 创建新目录
+     */
+    public function createDirectory($folder)
+    {
+        $folder = $this->cleanFolder($folder);
+
+        if ($this->disk->exists($folder)) {
+            return "Folder '$folder' already exists.";
+        }
+
+        return $this->disk->makeDirectory($folder);
+    }
+
+    /**
+     * 删除目录
+     */
+    public function deleteDirectory($folder)
+    {
+        $folder = $this->cleanFolder($folder);
+
+        $filesFolders = array_merge(
+            $this->disk->directories($folder),
+            $this->disk->files($folder)
+        );
+        if (! empty($filesFolders)) {
+            return "Directory must be empty to delete it.";
+        }
+
+        return $this->disk->deleteDirectory($folder);
+    }
+
+    /**
+     * 删除文件
+     */
+    public function deleteFile($path)
+    {
+        $path = $this->cleanFolder($path);
+
+        if (! $this->disk->exists($path)) {
+            return "File does not exist.";
+        }
+
+        return $this->disk->delete($path);
+    }
+
+    /**
+     * 保存文件
+     */
+    public function saveFile($path, $content)
+    {
+        $path = $this->cleanFolder($path);
+
+        if ($this->disk->exists($path)) {
+            return "File already exists.";
+        }
+
+        return $this->disk->put($path, $content);
     }
 }

@@ -20,7 +20,7 @@ class CreateTagsTable extends Migration
             $table->string('subtitle');
             $table->string('page_image'); //标签图片
             $table->string('meta_description');  //标签介绍
-            $table->string('layout')->default('blog.layout.index');  //博客布局
+            $table->string('layout')->default('home.layouts.index');  //博客布局
             $table->boolean('reverse_direction');  //在文章列表按时间升序排列博客文章  默认降序
             $table->timestamps();
         });

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Home;
 
+use App\Models\Tag;
+use App\Services\PostService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
@@ -13,19 +15,28 @@ class IndexController extends Controller
      * index 首页
      * @param rticle $articleModel
      */
-    public function index()
+    public function index(Request $request)
     {
-        $posts = Post::where('published_at', '<=', Carbon::now())
-                ->orderBy('published_at', 'desc')
-                ->paginate(config('blog.posts_per_page'));
-        return view('home.index.index', compact('posts'));
+        $tag = $request->get('tag');
+//        dd($tag);
+        $postService = new PostService($tag);
+
+        $data = $postService->lists();
+//        dd($data);
+        $layout = $tag ? Tag::layout($tag) : 'home.layouts.index';
+//        dd($layout);
+        return view($layout, $data);
     }
 
 
-    public function showPost($slug)
+    public function showPost($slug, Request $request)
     {
-        $post = Post::where('slug', $slug)->firstOrFail();
-        return view('home.index.article', ['post' => $post]);
+        $post = Post::with('tags')->where('slug', $slug)->firstOrFail();
+        $tag = $request->get('tag');
+        if ($tag) {
+            $tag = Tag::where('tag', $tag)->firstOrFail();
+        }
+        return view($post->layout, compact('post', 'tag'));
     }
 
     /**

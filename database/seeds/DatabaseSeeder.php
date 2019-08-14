@@ -12,8 +12,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        //用于取消批量赋值白名单、黑名单属性校验
+
         Model::unguard();
-        // $this->call(UsersTableSeeder::class);
-        $this->call(PostsTableSeeder::class);
+        $this->call('TagsTableSeeder');
+        $this->call('PostsTableSeeder');
+//Model::reguard() 用于恢复校验
+        Model::reguard();
     }
 }

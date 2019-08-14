@@ -9,9 +9,9 @@
                 <h3 class="pull-left">上传</h3>
                 <div class="pull-left">
                     <ul class="breadcrumb">
-                        @foreach( $breadcrumb as $path => $disp )
+                        @foreach( $breadcrumbs as $path => $disp )
                             <li>
-                                <a href="admin/upload?folder={{ $path }}">{{ $disp }}</a>
+                                <a href="/admin/upload?folder={{ $path }}">{{ $disp }}</a>
                             </li>
                         @endforeach
                         <li class="active">{{ $folderName }}</li>
@@ -50,7 +50,7 @@
                     @foreach($subfolders as $path => $name)
                         <tr>
                             <td>
-                                <a href="admin/upload?folder={{ $path }}">
+                                <a href="/admin/upload?folder={{ $path }}">
                                     <i class="fa fa-folder fa-lg fa-fw"></i>{{ $name }}
                                 </a>
                             </td>
