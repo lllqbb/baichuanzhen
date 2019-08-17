@@ -7,6 +7,7 @@ return [
     'author' => '白传镇',
     'page_image' => 'home-bg.jpg',
     'posts_per_page' => 10,
+    'email' => 'xiaobai_0304@163.com',
     'uploads' => [
         'storage' => 'public',
         'webpath' => '/storage',

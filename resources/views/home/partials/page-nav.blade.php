@@ -42,7 +42,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-8">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="{{ url('/') }}" id="nav-color">主页</a></li>
-                <li><a href="#" id="nav-color">PHP闲谈</a></li>
+                <li><a href="#" id="nav-color">PHP</a></li>
                 <li><a href="#" id="nav-color">Linux</a></li>
                 <li><a href="#" id="nav-color">前端</a></li>
                 <li><a href="#" id="nav-color">Laravel</a></li>
@@ -52,7 +52,7 @@
                 <li><a href="{{ asset('/contact') }}" id="nav-color">联系我们</a></li>
                 <li><a href="{{ asset('home/login') }}" id="nav-color">登录</a></li>
             </ul>
-        </div><!-- /.navbar-collapse -->
+        </div>
     </div>
 </nav>
 </div>
