@@ -24,7 +24,7 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
-        "ajv": "^6.10.0",
+        "ajv": "^6.12.3",
         "bootstrap": "^4.3.1",
         "dependencies": "0.0.1",
         "peer": "^0.2.10",
