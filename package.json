@@ -16,7 +16,7 @@
         "cross-env": "^5.1",
         "datatables.net-bs4": "^1.10.19",
         "jquery": "^3.2",
-        "laravel-mix": "^1.0",
+        "laravel-mix": "^6.0",
         "lodash": "^4.17.4",
         "pickadate": "^5.0.0-alpha.3",
         "selectize": "^0.12.6",
